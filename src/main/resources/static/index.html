@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css">    
+<title>Produtos Delícias da Roça | Rapaduras Artesanais Mineiras</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- TOPO -->
+    <div class="topo">
+    
+    <div class="container topo-content">
+    
+    <div class="logo">
+    <span>Produtos Delícias da Roça</span>
+    </div>
+    
+    <nav id="nav">
+    
+    <a href="#producao">Sabores</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#historia">História</a>
+    <a href="#contato">Contato</a>
+    
+    <a href="login.html">
+    Login
+    </a>
+    
+    <a href="admin.html" id="adminDesktopBtn" style="display:none; color:#ffcf87; font-weight:700;">
+        Adicionar Sabor
+        </a>
+
+    </nav>
+    <div class="menu-mobile-btn" onclick="abrirMenu()">
+        ☰
+        </div>
+    </div>
+    
+    </div>
+    <div class="menu-mobile" id="menuMobile">
+
+        <div class="fechar-menu" onclick="fecharMenu()">
+        ✕
+        </div>
+        
+        <a href="#producao" onclick="fecharMenu()">Sabores</a>
+        
+        <a href="#diferenciais" onclick="fecharMenu()">Diferenciais</a>
+        
+        <a href="#historia" onclick="fecharMenu()">História</a>
+        
+        <a href="#contato" onclick="fecharMenu()">Contato</a>
+        
+        <a href="login.html" onclick="fecharMenu()">Login</a>
+
+<!-- ADMIN BUTTON (vai aparecer só se for admin) -->
+<a href="admin.html" id="adminMobileBtn" style="display:none; color:#ffcf87; font-weight:700;">
+Adicionar Sabor
+</a>
+        
+        </div>
+    <!-- HERO -->
+    <header>
+    
+    <div class="container hero">
+    
+    <div class="hero-content">
+    
+    <br>
+    
+    <h1 class="titulo-principal">
+    O Verdadeiro Sabor da Roça Mineira
+    </h1>
+    
+    <p>
+        <p>
+            Rapaduras artesanais produzidas no interior de Minas Gerais, preservando o verdadeiro sabor da tradição mineira.
+            </p>
+    </p>
+    
+    <div class="buttons">
+    
+    <button class="btn btn-whats" onclick="whatsapp()">
+    💬 Falar no WhatsApp
+    </button>
+    
+    <a href="#producao" class="btn btn-outline">
+        Conhecer Sabores
+    </a>
+    
+    </div>
+    
+    <div class="stats">
+    
+    <div>
+    <h3>3ª Geração</h3>
+    <p>De Tradição Familiar</p>
+    </div>
+    
+    <div>
+    <h3>100%</h3>
+    <p>Artesanal</p>
+    </div>
+    
+    <div>
+    <h3>MG</h3>
+    <p>Produção mineira</p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </header>
+    
+    <!-- PRODUÇÃO -->
+    <section id="producao" class="fade-up">
+    
+    <div class="container">
+    
+    <div class="titulo">
+    <h2>Nossos Sabores</h2>
+    <p>Conheça os sabores da nossa produção mineira feita com tradição e ingredientes selecionados.</p></div>
+    <div style="
+background:#5c3317;
+color:white;
+padding:20px;
+border-radius:18px;
+text-align:center;
+margin:25px 0 35px;
+">
+
+<h3 style="margin-bottom:10px;">
+🌾 Rapaduras Artesanais de 500g
+</h3>
+
+<p style="line-height:1.8;">
+Não se deixe enganar pelo tamanho das fotos!
+Todas as nossas rapaduras possuem <strong>500g de puro sabor mineiro</strong>,
+produzidas artesanalmente com tradição familiar, ingredientes selecionados e o autêntico gosto da roça.
+</p>
+
+</div>
+
+    <div class="produtos-wrapper">
+
+        <button class="seta seta-esquerda" id="setaEsquerda">
+        ❮
+        </button>
+        
+        <div class="grid" id="produtos">
+        </div>
+        
+        <button class="seta seta-direita" id="setaDireita">
+        ❯
+        </button>
+        
+        </div>
+    
+
+    </div>
+    
+    </section>
+    
+    <!-- DIFERENCIAIS -->
+    <section class="diferenciais fade-up" id="diferenciais">
+    
+    <div class="container">
+    
+    <div class="titulo">
+        <h2>Por que nossas rapaduras são especiais?</h2>
+    <p>Qualidade artesanal em cada detalhe</p>
+    </div>
+    
+    <div class="diferenciais-grid">
+    
+    <div class="box">
+    <h3>🌿 100% Natural</h3>
+    <p>
+    Sem conservantes e feita apenas com ingredientes selecionados.
+    </p>
+    </div>
+    
+    <div class="box">
+    <h3>🔥 Produção Tradicional</h3>
+    <p>
+    Produzida artesanalmente no tacho, preservando o sabor original da roça.
+    </p>
+    </div>
+    
+    <div class="box">
+    <h3>❤️ Produção com Carinho</h3>
+    <p>
+    Cada produção recebe atenção especial para garantir qualidade e autenticidade.
+    </p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    <!-- GALERIA -->
+    <section class="fade-up">
+    
+    <div class="container">
+    
+    <div class="titulo">
+    <h2>Da Cana ao Sabor</h2>
+    <p>Cada etapa preserva a tradição da verdadeira produção mineira.</p>
+    </div>
+    
+    <div class="galeria">
+    
+    <img src="image/inicioPlantacao.JPG">
+    <img src="image/meioPlantacao.JPG">
+    <img src="image/finalPlantacao.JPG">
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    <!-- HISTORIA -->
+    <section class="historia fade-up" id="historia">
+    
+    <div class="container">
+    
+    <div class="titulo">
+    <h2>Raízes da Roça</h2>
+    <p>Três gerações preservando o verdadeiro sabor da roça</p>
+    </div>
+    
+    <div class="historia-content">
+    
+        <p>
+            A produção de rapadura sempre fez parte da minha vida e da história da minha família. Mais do que um trabalho, ela representa tradição, dedicação e um legado construído ao longo de três gerações no interior de Minas Gerais.
+            <br><br>
+    
+            Tudo começou com os meus antepassados, passou pelo meu avô, pelo meu pai e continua vivo até hoje através do nosso trabalho. Desde muito novo aprendi no engenho da família o verdadeiro valor da produção artesanal, preservando o sabor autêntico da rapadura da roça feita da forma tradicional.
+            <br><br>
+    
+            Em 2012, decidi dar continuidade a esse legado de forma ainda mais forte. Deixei um emprego fixo para investir no sonho de produzir uma rapadura pura, natural e feita com qualidade. O que começou com um pequeno engenho e muita dedicação, hoje se transformou em uma estrutura moderna, sem perder as raízes, a tradição e o carinho da produção artesanal.
+            <br><br>
+    
+            Mesmo com a evolução da produção, o meu compromisso continua sendo o mesmo: oferecer um produto natural, feito com cuidado, respeito à tradição mineira e valorização da agricultura familiar. Cada rapadura carrega um pouco da nossa história, da roça e do sabor que atravessa gerações.
+        </p>
+    
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    <!-- CTA FINAL -->
+    <section class="cta-final fade-up" id="contato">
+    
+    <div class="container">
+    
+    <h2>
+    Faça seu pedido pelo WhatsApp
+    </h2>
+    
+    <p>
+        Entre em contato e descubra o verdadeiro sabor da rapadura mineira feita com tradição e carinho.
+    </p>
+    
+    <button class="btn btn-whats" onclick="whatsapp()">
+    💬 Entrar em Contato
+    </button>
+    
+    </div>
+    
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+    
+    <p>
+    © 2026 Produtos Delícias da Roça • Todos os direitos reservados
+    </p>
+    
+    <p class="footer-sub">
+    Produção artesanal mineira feita com tradição e carinho 🌾
+    </p>
+    
+    </footer>
+    
+    <!-- FLOAT -->
+    <div class="whats-float" onclick="whatsapp()">
+    💬
+    </div>
+<!-- MODAL EDITAR -->
+
+<div class="modal" id="modalEditar">
+
+    <div class="modal-box">
+
+        <h2>Editar Sabor</h2>
+
+        <input type="text" id="editNome" placeholder="Nome">
+
+        <textarea id="editDescricao"
+        placeholder="Descrição"></textarea>
+
+        <input type="text" id="editImagem"
+        placeholder="URL da imagem">
+
+        <div class="modal-buttons">
+
+            <button class="salvar-btn"
+            onclick="salvarEdicao()">
+            Salvar
+            </button>
+
+            <button class="cancelar-btn"
+            onclick="fecharModalEditar()">
+            Cancelar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DELETE -->
+
+<div class="modal" id="modalDelete">
+
+    <div class="modal-box">
+
+        <h2>Apagar Sabor?</h2>
+
+        <p>
+        Você tem certeza que deseja apagar este sabor?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button class="delete-confirm"
+            onclick="confirmarDelete()">
+            Apagar
+            </button>
+
+            <button class="cancelar-btn"
+            onclick="fecharModalDelete()">
+            Cancelar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

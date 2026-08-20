@@ -1,0 +1,800 @@
+:root{
+    --marrom:#5c3317;
+    --marrom2:#8b4513;
+    --creme:#f8f5ef;
+    --verde:#25d366;
+    --verde2:#1eb85a;
+    --texto:#2a2a2a;
+    --cinza:#777;
+    --branco:#fff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--creme);
+    color:var(--texto);
+    overflow-x:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+
+/* HEADER */
+
+.titulo-principal{
+    font-family:'Arial', serif;
+    font-size:78px;
+    line-height:1;
+    font-weight: bold;
+    letter-spacing:-1px;
+    max-width:700px;
+}
+
+header{
+    background:
+            linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+            url("image/fotoPrincipalRapadura.png");
+
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+
+    position:relative;
+    overflow:hidden;
+
+    min-height:100vh;
+
+    color:white;
+    display:flex;
+    align-items:center;
+}
+
+header::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:60px;
+    background:linear-gradient(to top,var(--creme),transparent);
+}
+
+.topo{
+    position:absolute;
+    top:0;
+    width:100%;
+    padding:15px 5px;
+    z-index:10;
+
+    backdrop-filter:blur(5px);
+    background:rgba(0,0,0,.15);
+    border-bottom:0px solid rgba(255,255,255,.08);
+}
+
+.topo-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    font-family:'Playfair Display', serif;
+}
+
+.logo span{
+    color:#ffcf87;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:30px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffcf87;
+}
+
+.hero{
+    width:100%;
+}
+
+.hero-content{
+    max-width:650px;
+    position:relative;
+    z-index:2;
+}
+
+
+
+.hero h1{
+    font-size:60px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:35px;
+    color:#f1f1f1;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    padding:18px 28px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-whats{
+    background:linear-gradient(135deg,#25d366,#1eb85a);
+    color:white;
+    box-shadow:0 12px 25px rgba(37,211,102,.35);
+}
+
+.btn-whats:hover{
+    transform:translateY(-3px);
+}
+
+.btn-whats:active{
+    transform:scale(.97);
+}
+
+.btn-outline{
+    background:white;
+    color:var(--marrom);
+}
+
+.btn-outline:hover{
+    transform:translateY(-3px);
+}
+
+/* STATS */
+
+.stats{
+    display:flex;
+    gap:40px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.stats h3{
+    font-size:32px;
+    color:#ffcf87;
+}
+
+.stats p{
+    margin-top:5px;
+    color:#eee;
+    font-size:14px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.titulo h2{
+    font-size:42px;
+    color:var(--marrom);
+    margin-bottom:10px;
+}
+
+.titulo p{
+    color:var(--cinza);
+}
+
+.titulo h2::after{
+    content:'';
+    display:block;
+    width:100px;
+    height:5px;
+    background:linear-gradient(90deg,#c98a43,#5c3317);
+    margin:10px auto 0;
+    border-radius:50px;
+}
+
+/* CARDS */
+
+.grid{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:10px;
+    scrollbar-width:none;
+}
+
+.grid::-webkit-scrollbar{
+    height:8px;
+    display:none;
+}
+
+.grid::-webkit-scrollbar-thumb{
+    background:#c98a43;
+    border-radius:20px;
+}
+
+.grid::-webkit-scrollbar-track{
+    background:#eee;
+    border-radius:20px;
+}
+
+.produtos-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.seta{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(92,51,23,.9);
+    color:white;
+
+    font-size:28px;
+    cursor:pointer;
+
+    z-index:10;
+
+    transition:.3s;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    line-height:1;
+}
+
+.seta:hover{
+    transform:translateY(-50%) scale(1.08);
+    background:#8b4513;
+}
+
+.seta-esquerda{
+    left:-20px;
+}
+
+.seta-direita{
+    right:-20px;
+}
+
+.card{
+    background:rgba(255,255,255,.95);
+    min-width:260px;
+    max-width:260px;
+    flex-shrink:0;
+    backdrop-filter:blur(10px);
+    border-radius:24px;
+    border:1px solid rgba(0,0,0,.05);
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    object-position:center;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+    font-size:24px;
+    margin-bottom:10px;
+    color:var(--marrom);
+}
+
+.card-content p{
+    color:var(--cinza);
+    line-height:1.7;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.modal-box{
+    background:white;
+    width:90%;
+    max-width:500px;
+
+    padding:30px;
+    border-radius:25px;
+
+    animation:fadeModal .25s ease;
+}
+
+.modal-box h2{
+    color:#5c3317;
+    margin-bottom:20px;
+}
+
+.modal-box p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.modal-box input,
+.modal-box textarea{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+
+    border-radius:12px;
+    border:1px solid #ccc;
+
+    font-family:'Poppins',sans-serif;
+}
+
+.modal-box textarea{
+    min-height:120px;
+    resize:none;
+}
+
+.modal-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.modal-buttons button{
+    flex:1;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.salvar-btn{
+    background:#25d366;
+    color:white;
+}
+
+.salvar-btn:hover{
+    background:#1eb85a;
+}
+
+.cancelar-btn{
+    background:#eee;
+}
+
+.delete-confirm{
+    background:#ff4d4d;
+    color:white;
+}
+
+.delete-confirm:hover{
+    background:#e63b3b;
+}
+
+@keyframes fadeModal{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* ADMIN BUTTONS */
+
+.admin-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.edit-btn,
+.delete-btn{
+    border:none;
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.edit-btn{
+    background:#ffcf87;
+}
+
+.delete-btn{
+    background:#ff6b6b;
+    color:white;
+}
+
+.edit-btn:hover,
+.delete-btn:hover{
+    transform:scale(1.08);
+}
+
+.controls{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.controls button{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#5c3317;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.controls button:hover{
+    transform:scale(1.08);
+    background:#8b4513;
+}
+
+/* DIFERENCIAIS */
+
+.diferenciais{
+    background:white;
+}
+
+.diferenciais-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.box{
+    background:var(--creme);
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-6px);
+}
+
+.box h3{
+    margin:15px 0;
+    color:var(--marrom);
+}
+
+.box p{
+    color:var(--cinza);
+    line-height:1.7;
+}
+
+/* GALERIA */
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.galeria img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.galeria img:hover{
+    transform:scale(1.04);
+    filter:brightness(1.05);
+}
+
+/* HISTORIA */
+
+.historia{
+    background:white;
+}
+
+.historia-content{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.historia-content p{
+    line-height:2;
+    color:var(--cinza);
+    font-size:18px;
+}
+
+/* CTA */
+
+.cta-final{
+    background:
+            linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+            url("image/fotoPrincipalRapadura.png");
+
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    color:white;
+    text-align:center;
+}
+
+.cta-final h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.cta-final p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#2b160c;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.footer-sub{
+    margin-top:10px;
+    color:#c9b8aa;
+    font-size:14px;
+}
+
+/* WHATS FLOAT */
+
+.whats-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:65px;
+    height:65px;
+    background:var(--verde);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+    transition:.3s;
+    z-index:999;
+}
+
+.whats-float:hover{
+    transform:scale(1.1);
+}
+
+/* ANIMAÇÃO */
+
+.fade-up{
+    animation:fadeUp .9s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* RESPONSIVO */
+
+/* MENU MOBILE */
+
+.menu-mobile-btn{
+
+    display:none;
+
+    font-size:34px;
+
+    color:white;
+
+    cursor:pointer;
+
+    user-select:none;
+}
+
+.menu-mobile{
+
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:280px;
+    height:100vh;
+
+    background:rgba(25,25,25,.96);
+
+    backdrop-filter:blur(14px);
+
+    z-index:99999;
+
+    padding:100px 35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+    transition:.4s ease;
+}
+
+.menu-mobile.ativo{
+    right:0;
+}
+
+.menu-mobile a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.menu-mobile a:hover{
+    color:#ffcf87;
+    transform:translateX(5px);
+}
+
+.fechar-menu{
+
+    position:absolute;
+
+    top:25px;
+    right:25px;
+
+    font-size:34px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+    }
+
+    .menu-mobile-btn{
+        display:block;
+    }
+
+    header{
+        min-height:75vh;
+        background-position:center;
+    }
+
+    .hero-content{
+        padding-top: 120px;
+    }
+
+    .hero h1{
+        font-size:36px;
+        line-height:1.2;
+    }
+
+    .titulo-principal{
+        font-size:48px;
+        line-height:1.1;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .titulo h2{
+        font-size:34px;
+    }
+
+    .cta-final h2{
+        font-size:36px;
+    }
+
+    .stats{
+        gap:20px;
+        padding-bottom: 60px;
+    }
+
+}

@@ -1,1 +1,21 @@
-[]
+[ {
+  "codigo" : 2,
+  "nome" : "aaa",
+  "descricao" : "teste",
+  "imagem" : "/uploads/17c785f4-d257-4b13-a99a-3a6c6c8d2626.png"
+}, {
+  "codigo" : 3,
+  "nome" : "adfa",
+  "descricao" : "asdf",
+  "imagem" : "/uploads/a46f8db1-b6fa-4f3a-953b-e34abba3b666.jpg"
+}, {
+  "codigo" : 4,
+  "nome" : "teste",
+  "descricao" : "aadfad",
+  "imagem" : "/uploads/deb72fe1-4251-4fd8-a2e0-5dd82128ce1d.jpg"
+}, {
+  "codigo" : 5,
+  "nome" : "lukinhaGay",
+  "descricao" : "adfa",
+  "imagem" : "/uploads/42ee95a4-8293-4dd8-b589-2722321dec2d.jpeg"
+} ]

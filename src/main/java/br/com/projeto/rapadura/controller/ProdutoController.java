@@ -1,5 +1,6 @@
 package br.com.projeto.rapadura.controller;
 
+import br.com.projeto.rapadura.DTO.ProdutoRequest;
 import br.com.projeto.rapadura.model.Produto;
 import br.com.projeto.rapadura.service.ProdutoService;
 import jakarta.servlet.http.HttpSession;
@@ -25,12 +26,25 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public ResponseEntity<String> cadastrarProduto(@RequestBody Produto produto, HttpSession session) {
+    public ResponseEntity<String> cadastrarProduto(
+            @ModelAttribute ProdutoRequest request,
+            HttpSession session
+    ) {
         if (!adminLogado(session)) {
             return ResponseEntity.status(403).body("Acesso negado");
         }
 
-        boolean cadastrado = produtoService.adicionarProduto(produto);
+        Produto produto = new Produto();
+
+        produto.setCodigo(request.getCodigo());
+        produto.setNome(request.getNome());
+        produto.setDescricao(request.getDescricao());
+
+        if (request.getImagem() != null && !request.getImagem().isEmpty()) {
+            produto.setImagem(request.getImagem().getOriginalFilename());
+        }
+
+        boolean cadastrado = produtoService.adicionarProduto(request);
 
         if (cadastrado) {
             return ResponseEntity.ok("Produto cadastrado com sucesso");

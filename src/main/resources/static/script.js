@@ -72,12 +72,17 @@ async function carregarProdutos() {
         const produtos = await resposta.json();
         grid.innerHTML = "";
 
+
+
         produtos.forEach((p) => {
             const codigo = p.codigo ?? "";
             const nome = p.nome ?? "";
             const descricao = p.descricao ?? "";
             const imagem = p.imagem ?? "";
             let adminButtons = "";
+
+            console.log("Produto:", p.nome);
+            console.log("Imagem:", p.imagem);
 
             if (isAdmin) {
                 adminButtons = `

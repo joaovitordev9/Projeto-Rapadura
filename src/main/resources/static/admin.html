@@ -198,16 +198,40 @@
 <body>
 <div class="box">
     <div class="logo">Produtos Delicias da Roca</div>
+
     <h1>Adicionar Sabor</h1>
-    <p class="sub">Adicione novos sabores artesanais ao catalogo da loja.</p>
-    <div class="input-group"><label>Nome do Sabor</label><input id="nome" placeholder="Digite o nome do produto"></div>
-    <div class="input-group"><label>Descricao</label><textarea id="descricao"
-                                                               placeholder="Digite uma descricao"></textarea></div>
-    <div class="input-group"><label>URL da Imagem</label><input id="imagem" oninput="previewImagem()"
-                                                                placeholder="Cole a URL da imagem"></div>
-    <img alt="Preview da imagem" class="preview" id="preview">
+
+    <p class="sub">
+        Adicione novos sabores artesanais ao catalogo da loja.
+    </p>
+
+    <div class="input-group">
+        <label>Nome do Sabor</label>
+        <input id="nome" placeholder="Digite o nome do produto">
+    </div>
+
+    <div class="input-group">
+        <label>Descricao</label>
+        <textarea id="descricao"
+                  placeholder="Digite uma descricao"></textarea>
+    </div>
+
+    <div class="input-group">
+        <label>Imagem</label>
+        <input type="file"
+               accept="image/*"
+               id="imagem"
+               onchange="previewImagem()">
+    </div>
+
+    <img alt="Preview da imagem"
+         class="preview"
+         id="preview">
+
     <button onclick="addProduto()">Adicionar Sabor</button>
+
     <button onclick="logout()">Sair</button>
+
     <a class="back" href="index.html">Voltar para o site</a>
 </div>
 <script>
@@ -258,25 +282,36 @@
     async function addProduto() {
         const nome = document.getElementById('nome').value.trim();
         const descricao = document.getElementById('descricao').value.trim();
-        const imagem = document.getElementById('imagem').value.trim();
+        const imagem = document.getElementById('imagem').files[0];
+
         if (!nome || !descricao || !imagem) {
             mostrarMensagem('Preencha todos os campos!', '#ff4d4d');
             return;
         }
+
+        const formData = new FormData();
+
+        formData.append('nome', nome);
+        formData.append('descricao', descricao);
+        formData.append('imagem', imagem);
+
         const resposta = await fetchComCsrf('/produtos', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({nome, descricao, imagem})
+            body: formData
         });
+
         if (!resposta.ok) {
             mostrarMensagem('Erro ao salvar produto.', '#ff4d4d');
             return;
         }
+
         mostrarMensagem('Sabor criado com sucesso!', '#25d366');
+
         document.getElementById('nome').value = '';
         document.getElementById('descricao').value = '';
         document.getElementById('imagem').value = '';
         document.getElementById('preview').style.display = 'none';
+
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 1200);
